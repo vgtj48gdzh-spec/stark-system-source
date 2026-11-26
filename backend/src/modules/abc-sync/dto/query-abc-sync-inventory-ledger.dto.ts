@@ -1,0 +1,31 @@
+import { IsIn, IsOptional } from 'class-validator';
+import { AbcSyncQueryBaseDto } from './abc-sync-query-base.dto';
+
+export class QueryAbcSyncInventoryLedgerDto extends AbcSyncQueryBaseDto {
+  @IsOptional()
+  @IsIn([
+    'sourceTable',
+    'sourceOrderNo',
+    'ledgerTypeStandard',
+    'statusStandard',
+    'quantityStandard',
+    'amountStandard',
+    'mappingConfirmed',
+    'sourceUpdatedAt',
+    'syncedAt',
+    'updatedAt',
+    'createdAt',
+  ])
+  sortBy?:
+    | 'sourceTable'
+    | 'sourceOrderNo'
+    | 'ledgerTypeStandard'
+    | 'statusStandard'
+    | 'quantityStandard'
+    | 'amountStandard'
+    | 'mappingConfirmed'
+    | 'sourceUpdatedAt'
+    | 'syncedAt'
+    | 'updatedAt'
+    | 'createdAt';
+}
